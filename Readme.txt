@@ -23,4 +23,28 @@ nuestro modelo que debe tener una evaluación cercana al 100%
 
 Deploy y mejoras: El algoritmo es llevado a producción (aplicación o entorno para el que fue creado), 
 en este entorno podemos realizar las mejoras pertinentes de acuerdo al comportamiento con los usuario e 
-incluso aprovechando los datos generados en esta interacción
+incluso aprovechando los datos generados en esta interacción.
+_________________________________________________________________________________________
+		Pandas
+_________________________________________________________________________________________
+- Para crear una serie temporal se usa el modulo Series de pandas
+
+		series = pd.Series([1,2,3,4,5,6,6,7])
+
+-¿Como escoger columnas particulares?
+		Por ejemplo para extrar dos columnas con nomres col1 y col2
+			df[["col1","col2"]]
+		Para extrar una columna en particular
+			colum=df.nombre_columna
+
+- ¿Como llamar un archivo csv?
+		data=pd.read_csv("path")
+	
+- Para tomar un individuo con sus atributos usamos data.iloc[i] donde i e s el iesima fila 
+
+
+- ¿Como obtener las columans del df?
+		data.columns
+
+- Ordenar los elementos
+		para ordenar los indices  se usa data.sort_index(axis=0,ascending=False)
