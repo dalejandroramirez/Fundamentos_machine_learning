@@ -37,6 +37,9 @@ ________________________________________________________________________________
 		Para extrar una columna en particular
 			colum=df.nombre_columna
 
+-Describe una columna:
+data[‘columna’].describe()
+
 - ¿Como llamar un archivo csv?
 		data=pd.read_csv("path")
 	
@@ -48,3 +51,91 @@ ________________________________________________________________________________
 
 - Ordenar los elementos
 		para ordenar los indices  se usa data.sort_index(axis=0,ascending=False)
+
+
+-Crear arreglo de NxM:
+	np.full( (n, m), x )
+		Ej.
+			np.full( (3, 5), 10)
+			Resultado:
+				array([
+				[10, 10, 10, 10, 10],
+				[10, 10, 10, 10, 10],
+				[10, 10, 10, 10, 10]
+				])
+_________________________________________________________________________________________
+  									Scikit Learn
+_________________________________________________________________________________________
+
+Scikit Learn es una biblioteca de Python que está conformada por algoritmos de clasificación,
+ regresión, reducción de la dimensionalidad y clustering. Es una biblioteca clave en la 
+ aplicación de algoritmos de Machine Learning, tiene los métodos básicos para llamar un algoritmo,
+  dividir los datos en entrenamiento y prueba, entrenarlo, predecir y ponerlo a prueba.
+
+
+-División del conjunto de datos para entrenamiento y pruebas:
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state = 0)
+
+-Entrenar modelo:
+[modelo].fit(X_train, y_train)
+
+-Predicción del modelo:
+Y_pred = [modelo].predict(X_test)
+
+-Matriz de confusión:
+metrics.confusion_matrix(y_test, y_pred)
+
+-Calcular la exactitud:
+metrics.accuracy_score(y_test, y_pred)
+
+_________________________________________________________________________________________
+
+Overfiting and underfiting
+_________________________________________________________________________________________
+
+Sobreajunte (overfiting): 
+	Es cuando intentamos obligar a nuestro algoritmo a que se ajuste 
+	demasiado  a todos los datos posibles. Es muy importante proveer con información abundante 
+	a nuestro modelo pero también esta debe ser lo suficientemente variada para que nuestro 
+	algoritmo pueda generalizar lo aprendido.
+
+Subajuste (underfiting): 
+	Es cuando le suministramo a nuestro modelo un conjunto de datos es
+	muy pequeño, en este caso nuestro modelo no sera capas de aprender lo suficiente ya que tiene
+	muy poca infomación. La recomendación cuando se tienen muy pocos datos es usar el 70% de los 
+	datos para que el algoritmo aprenda y usar el resto para entrenamiento.
+
+_________________________________________________________________________________________
+
+Los modelos de clasificación son capaces de predecir cuál es la etiqueta correspondiente a
+cada ejemplo o instancia basado en aquello que ha aprendido del conjunto de datos de entrenamiento.
+Estos modelos necesitan ser evaluados de alguna manera y posteriormente comparar los resultados 
+obtenidos con aquellos que fueron entrenados.
+
+Una manera de hacerlo es mediante la matriz de confusión la cual nos permite evaluar el desempeño
+de un algoritmo de clasificación a partir del conteo de los aciertos y errores en cada una de las
+clases del algoritmo.
+
+Como su nombre lo dice tenemos una matriz que nos ayuda a evaluar la predicción mediante positivos
+y negativos
+
+
+Los verdaderos positivos (VP) son aquellos que fueron clasificados correctamente como positivos
+como el modelo.
+
+Los verdaderos negativos (VN) corresponden a la cantidad de negativos que fueron clasificados 
+correctamente como negativos por el modelo.
+
+Los falsos negativos (FN) es la cantidad de positivos que fueron clasificados incorrectamente como 
+negativos.
+
+Los falsos positivos (FP) indican la cantidad de negativos que fueron clasificados incorrectamente 
+como positivos.
+
+la entrada 1-1 es Verdadero Positivo
+la entrada 2-1 es False Positive
+la entrada 2-1 es False Negative
+la entrada 2-2 es True Negative 
+
+
+
