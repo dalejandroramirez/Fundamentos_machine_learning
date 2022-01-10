@@ -137,5 +137,47 @@ la entrada 2-1 es False Positive
 la entrada 2-1 es False Negative
 la entrada 2-2 es True Negative 
 
+_________________________________________________________________________________________
+Arbol de decisiones
+_________________________________________________________________________________________
+
+Árboles de decisión:
+
+**Ventajas: **
+
+	-Claridad en los datos
+	-Tolerantes al ruido y datos faltantes
+	-Las reglas extraídas permiten hacer extracciones
+	-Desventajas:
+		-Criterio de división es deficiente
+		-Sobreajuste-overfitting
+		-Ramas poco significativas
+	-Optimización del modelo:
+		-Evitar sobreajuste
+		-Selección efectiva de los atributos
+		-Campos nulos
+_________________________________________________________________________________________
+Notas	
+_________________________________________________________________________________________
+
+El comando para poder ver si no existen nulls .info()
+algunas cosas que comentar que pueden ser utiles
+
+cuando se hace el drop intentando eliminar algunas variables que no serán de interés, axis = 1 
+indica que estas variables son "columnas ", axis = 0 , indicaría que son filas.
+
+las dummy variables que se mencionan ligeramente convierten las variables categóricas en
+indicadoras como 0,1,2,…etc
+
+cuando se completaron los valores faltantes en las variables edad y la clase del pasajero (embarked),
+faltó mencionar un comando muy util para saber en que variables se tienen valores faltantes. 
+Se puede usar train_df.isnull.any().
 
 
+-Cuando se llenan los espacios con vacíos (fillna), para el caso de datos numéricos se utiliza 
+la mediana porque es una de las medidas de tendencia central que menos se afecta por los datos atípicos.
+
+Para el caso de los datos categóricos relacionados con el embarque, se utiliza la letra S porque 
+representa el embarque en la ciudad de South Hampton, en donde más personas se unieron al viaje.
+
+Estos datos se obtienen de un análisis previo a los datos trabajados.
