@@ -181,3 +181,45 @@ Para el caso de los datos categóricos relacionados con el embarque, se utiliza 
 representa el embarque en la ciudad de South Hampton, en donde más personas se unieron al viaje.
 
 Estos datos se obtienen de un análisis previo a los datos trabajados.
+_________________________________________________________________________________________
+K-mean
+_________________________________________________________________________________________
+Algoritmo no supervisado.
+	- Crea K grupos a partir de observaciones de un set de datos.
+	- Trata información que no tiene etiquetas asignadas.
+	- Agrupa información basada en sus características.
+	- K = centroides
+	- Aproximación a K: método del codo
+	
+	Aplicaciones:
+	- 	Segmentación por comportamiento: 
+		-	por historial de compras
+		- 	actividad en una aplicación móvil, web
+		- 	Definir personas basadas en sus intereses.
+		- 	Crear perfiles basado en el monitoreo de actividad.
+
+	- 	Ordenando medidas de sensores:
+		- 	Detecta tipos de actividades en sensores de movimiento.
+		- 	Grupos de imágenes.
+		- 	Separar audio.
+		- 	Identificar grupos en monitoreo de salud
+_________________________________________________________________________________________
+Notas
+_________________________________________________________________________________________
+Inicialmente iris es un array de datos
+y si se le quiere colocar columnas con nombres
+basta con usar columns=[nombre_columnas]
+
+Ejemplo:
+	x=pd.DataFrame(iris.data,columns=["Sepal Length","Sepal width","Petal length","Petal width"])
+	y=pd.DataFrame(iris.target,columns=["Target"])
+
+-
+En el dataset de vinos, la razón por la que debemos normalizar los datos antes de aplicar el modelo
+ es porque estamos trabajando con datos que miden diferentes cosas, como la intensidad del color, 
+ la alcalinidad, el grado de alcohol, etc, estos son valores que no pueden ser comparados entre sí 
+ (es como sumar peras con manzanas) y por eso se debe estandarizar, es decir, aplicar un proceso
+  estadístico que hace que todos los datos se ajusten a una curva de distribución normal y se situen
+   en una misma escala que permita su comparacion, por eso es que el accuracy aumenta desde un 36-37%, 
+   hasta un 89%
+
